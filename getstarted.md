@@ -34,15 +34,15 @@ Note that this was the easy way to *create* your website, but it does come at a 
 
 <!-- Put the style tag at the very bottom of the page -->
 <style>
-.gs-section-01 h3 { 
-  color: crimson;
-  text-shadow: 1px 1px 2px gray;
+.gs-section-01 {
+  border: 3px dashed teal;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
 }
-.gs-section-01 p {
-  color: #222;
-  background: #ffe5e5;
-  padding: 6px;
-  border-radius: 4px;
+.gs-section-01 h3 {
+  color: teal;
+}
 
 .gs-section-02 h3 { color: blue; text-transform: uppercase; }
 .gs-section-02 p  { line-height: 1.8; }
