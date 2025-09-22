@@ -34,18 +34,122 @@ Note that this was the easy way to *create* your website, but it does come at a 
 
 <!-- Put the style tag at the very bottom of the page -->
 <style>
-.gs-section-01 h3:hover {
-  color: orange;
-  transform: scale(1.1);
-  transition: all 0.3s ease-in-out;
+/* === Design tokens (light & dark) === */
+:root {
+  --bg: #ffffff;
+  --fg: #1f2937;         /* slate-800 */
+  --muted: #6b7280;      /* gray-500 */
+  --card: #ffffff;
+  --card-border: #e5e7eb;/* gray-200 */
+  --accent: #0ea5e9;     /* sky-500 */
+  --accent-600: #0284c7; /* sky-600 */
+  --accent-50: #f0f9ff;  /* sky-50 */
+  --success: #16a34a;    /* green-600 */
+  --shadow: 0 6px 18px rgba(2, 132, 199, 0.08);
 }
 
-.gs-section-02 h3 { color: blue; text-transform: uppercase; }
-.gs-section-02 p  { line-height: 1.8; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --card: #0f172a;         /* slate-900 */
+    --card-border: #1f2937;  /* slate-800 */
+    --accent: #38bdf8;
+    --accent-600: #0ea5e9;
+    --accent-50: #06263a;
+    --success: #22c55e;
+    --shadow: 0 8px 20px rgba(56, 189, 248, 0.12);
+  }
+}
 
-.gs-section-03 h3 { color: green; letter-spacing: 1px; }
-.gs-section-03 p  { font-style: italic; }
+/* === Page container === */
+.gs {
+  background: var(--bg);
+  color: var(--fg);
+  display: grid;
+  gap: 18px;
+}
 
-.gs-section-04 h3 { color: purple; text-decoration: underline; }
-.gs-section-04 p  { background: #f7f7f7; padding: 8px; border-radius: 6px; }
+/* === Step cards === */
+.step-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 18px 18px 16px 18px;
+  box-shadow: var(--shadow);
+}
+
+.step-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: .2px;
+}
+
+.step-card p { margin: 0 0 10px 0; color: var(--fg); }
+.step-card code { background: var(--accent-50); padding: 2px 6px; border-radius: 6px; }
+
+/* === Number badge === */
+.step-badge {
+  position: absolute;
+  top: -12px; left: -12px;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  background: var(--accent);
+  color: white; font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+}
+
+/* === Lists & meta info === */
+.checklist { list-style: none; padding-left: 0; margin: 8px 0 0 0; }
+.checklist li {
+  position: relative; padding-left: 26px; margin: 6px 0; color: var(--fg);
+}
+.checklist li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 0;
+  color: var(--success); font-weight: 700;
+}
+
+.meta { list-style: none; padding-left: 0; margin: 8px 0 0 0; color: var(--muted); }
+.meta li { margin: 4px 0; }
+
+/* === Inline notes === */
+.note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--accent-50);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent-600);
+  border-radius: 10px;
+  color: var(--fg);
+}
+
+/* === Code snippet block (subtle) === */
+.snippet {
+  background: var(--bg);
+  border: 1px dashed var(--card-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 10px 0 0 0;
+}
+
+/* === Nice hover lift for cards (no motion sickness) === */
+@media (hover: hover) {
+  .step-card { transition: transform .15s ease, box-shadow .15s ease; }
+  .step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(2,132,199,0.10);
+  }
+}
+
+/* === Tighten default markdown spacing inside .step-card === */
+.step-card :is(p, ul, ol, pre, .note, .snippet) + :is(p, ul, ol, pre, .note, .snippet) {
+  margin-top: 8px;
+}
 </style>
+
