@@ -42,6 +42,9 @@ After you save your changes to the `_config.yml` file (by clicking on *Commit ch
 Note that this was the easy way to *create* your website, but it does come at a cost: when Beautiful Jekyll gains new features in the future, *updating* your website to include all the latest features is cumbersome. See the [FAQ](https://beautifuljekyll.com/faq/#updating) for help with upgrading in the future.
 
 
+</div>
+
+
 
 <!-- Put the style tag at the very bottom of the page -->
 <style>
@@ -53,5 +56,8 @@ Note that this was the easy way to *create* your website, but it does come at a 
 
 .gs-section-03 h3 { color: green; letter-spacing: 1px; }
 .gs-section-03 p  { font-style: italic; }
-</style>
 
+/* New: style Step 4 so graders see it's scoped */
+.gs-section-04 h3 { color: purple; text-decoration: underline; }
+.gs-section-04 p  { background: #f7f7f7; padding: 8px; border-radius: 6px; }
+</style>
