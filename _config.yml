@@ -19,11 +19,10 @@ author: Carrie Kuhlman
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-     - Getting Started: "getstarted"    
-  Author's home: ""
-
+    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+    - Learn markdown: "http://www.markdowntutorial.com/"
+    - Getting Started: "getstarted"                         # ADD THIS LINK
+  Author's home: "http://deanattali.com"
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
