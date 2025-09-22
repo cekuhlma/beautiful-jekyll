@@ -34,14 +34,10 @@ Note that this was the easy way to *create* your website, but it does come at a 
 
 <!-- Put the style tag at the very bottom of the page -->
 <style>
-.gs-section-01 {
-  border: 3px dashed teal;
-  padding: 12px;
-  margin: 15px 0;
-  border-radius: 8px;
-}
-.gs-section-01 h3 {
-  color: teal;
+.gs-section-01 h3:hover {
+  color: orange;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .gs-section-02 h3 { color: blue; text-transform: uppercase; }
