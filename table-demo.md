@@ -21,7 +21,7 @@ gosling:
     - not ryan reynolds
 ---
 
-![](/img/ryan-v-ryan.jpg)
+img src="{{ 'assets/img/ryan-v-ryan.jpg' | relative_url }}"
 
 ### Lorem Ipsum
 
